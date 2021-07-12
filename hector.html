@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>You Are Hector Salamanca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Smokum&display=swap" rel="stylesheet">
+</head>
+
+
+
+<style>
+
+body{
+margin:0px;
+background-color:black;
+}
+#im
+{
+cursor: pointer;
+width: 140px;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.txt{
+color:white;
+text-shadow: 2px 2px 5px black;
+font-family: 'Smokum', cursive;
+font-size: 4em;
+white-space:nowrap;
+
+}
+#sml{
+font-size:2em;
+margin-top: 0px;
+text-align:center;
+transform: translate(0%,-120%);
+}
+#bottom{
+font-size:2em;
+text-align:center;
+}
+
+
+#texxt{
+
+position:fixed;
+left:50%;
+top:0%;
+transform: translate(-50%,0%);
+}
+
+#fuck{
+
+position:fixed;
+left:50%;
+transform: translate(-50%,0%);
+
+height: 10vh;
+    line-height: 170vh;
+    font-size: 2vh;
+    text-align: center;
+
+}
+audio{
+opacity: 0;
+}
+
+video{
+position:fixed;
+width: 100%;
+margin-top: 0px;
+margin-left: 0px;opacity:0;
+}
+
+#ding
+{opacity:0;
+}
+
+button{
+color:white;
+background-color:#795644;
+border-radius:30%;
+text-shadow: 2px 2px 5px black;
+box-shadow: 2px 2px 5px black;
+font-family: 'Smokum', cursive;
+font-size: 2em;
+opacity:0;
+white-space:nowrap;
+position:fixed;
+left:50%;
+top:88%;
+transform: translate(-50%,0%);
+z-index:10000;
+
+}
+</style>
+
+
+<body>
+<div id="vid">
+<video id="gustavo"> <source src="media/gustavo.mp4" type="video/mp4" preload="auto" autobuffer controls></video>
+</div>
+
+
+<audio id="d1"> <source src="media/dingg.ogg" type="audio/ogg" preload="auto" autobuffer controls></audio>
+<audio id="d2"> <source src="media/dingg.ogg" type="audio/ogg" preload="auto" autobuffer controls></audio>
+<audio id="d3"> <source src="media/dingg.ogg" type="audio/ogg" preload="auto" autobuffer controls></audio>
+
+
+<div id="texxt"><h1 class="txt" id="textt">You Are Hector Salamanca</h1>
+<h3 class="txt" id="sml">You know what to do.</h3> </div>
+
+
+<div id=btn></div>
+
+
+<div id="fuck">
+<h5 class="txt" id="bottom">Made by @sircrossleg on Twitter. Characters and videos from Breaking Bad, owned by Sony Pictures Television Inc.</h5></div>
+<img id="im" src="media/bell.png">
+
+
+</body>
+<script>
+
+
+
+var cnt=0;
+
+var cont=document.getElementById('gustavo');
+var fadeIn = (element, duration) => {
+    (function increment(value = 0) {
+        element.style.opacity = String(value);
+        if (element.style.opacity !== '1') {
+            setTimeout(() => {
+                increment(value + 0.1);
+            }, duration / 10);
+        }
+    })();
+};
+
+var fadeOut = (element, duration) => {
+    (function increment(value = 1) {
+        element.style.opacity = String(value);
+        if (element.style.opacity !== '0') {
+            setTimeout(() => {
+                increment(value - 0.1);
+            }, duration / 10);
+        }
+    })();
+};
+
+var ding; var nr;
+
+document.getElementById("im").addEventListener("click", function(){
+if(cnt==40)
+{
+cont.play();
+/*
+document.getElementById("textt").classlist.toggle("fade");
+document.getElementById("im").classlist.toggle("fade");*/
+fadeOut(document.getElementById("im"),100);
+fadeOut(document.getElementById("texxt"),100);
+fadeOut(document.getElementById("fuck"),100);
+setTimeout(function(){
+var element;
+element = document.getElementById("texxt");
+element.parentNode.removeChild(element);
+element = document.getElementById("fuck");
+element.parentNode.removeChild(element);
+element = document.getElementById("im");
+element.parentNode.removeChild(element);
+},105);
+setTimeout(function(){
+var btn=document.createElement("button");
+btn.innerHTML="Reload";
+document.getElementById("btn").append(btn);
+fadeIn(btn,1000);
+
+btn.addEventListener("click",function(){location.reload();});
+
+
+},7000);
+
+
+}
+
+
+
+
+nr=cnt%3;
+switch(nr)
+{
+case 1: ding=document.getElementById("d1"); break;
+case 2: ding=document.getElementById("d2"); break;
+case 0: ding=document.getElementById("d3"); break;/*
+case 4: ding=document.getElementById("d4"); break;
+case 0: ding=document.getElementById("d0"); break;*/
+}
+ding.currentTime = 0;
+ding.play();
+cnt++;
+cont.style.opacity = cnt/40;
+
+});
+
+</script>
+
+</html>
