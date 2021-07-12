@@ -3,17 +3,20 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0' >
 <title>You Are Hector Salamanca</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Smokum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Smokum&display=swap" rel="stylesheet">
 </head>
 
 
 
 <style>
 
-body{
+body{overflow: hidden;
 margin:0px;
 background-color:black;
 }
@@ -26,55 +29,36 @@ top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 }
-.txt{
-color:white;
-text-shadow: 2px 2px 5px black;
-font-family: 'Smokum', cursive;
-font-size: 4em;
-white-space:nowrap;
 
-}
-#sml{
-font-size:2em;
-margin-top: 0px;
-text-align:center;
-transform: translate(0%,-120%);
-}
-#bottom{
-font-size:2em;
-text-align:center;
-}
-
-
-#texxt{
-
-position:fixed;
-left:50%;
-top:0%;
-transform: translate(-50%,0%);
-}
-
-#fuck{
-
-position:fixed;
-left:50%;
-transform: translate(-50%,0%);
-
-height: 10vh;
-    line-height: 170vh;
-    font-size: 2vh;
-    text-align: center;
-
-}
 audio{
 opacity: 0;
 }
 
-video{
-position:fixed;
-width: 100%;
-margin-top: 0px;
-margin-left: 0px;opacity:0;
+.vid{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index:-1000;
+}
+.vid > video {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+@media screen and (max-aspect-ratio: 1920/1080) {
+  .vid > video {
+    height: 100%;
+  }
+}
+@media screen and (min-aspect-ratio: 1920/1080) {
+  .vid > video {
+    width: 100%;
+  }
 }
 
 #ding
@@ -88,39 +72,75 @@ border-radius:30%;
 text-shadow: 2px 2px 5px black;
 box-shadow: 2px 2px 5px black;
 font-family: 'Smokum', cursive;
-font-size: 2em;
+font-size: 4vmax;
 opacity:0;
 white-space:nowrap;
 position:fixed;
 left:50%;
 top:88%;
+margin-top:-2vmax;
 transform: translate(-50%,0%);
-z-index:10000;
+z-index:50;
+}
 
+.txt{
+color: white;
+text-align: center;
+font-family: 'Smokum', cursive;
+text-shadow: 2px 2px 5px black;
+z-index:100;
+}
+h1{
+line-height: 1vmax;
+}
+#title{
+margin-top:2vmax;
+font-size: 5.5vmax;
+line-height: 3.5vmax;
+}
+#subtitle{
+font-size: 3vmax;
+margin-top:-2vmax;
+}
+#footer{
+font-family:'Roboto Slab', serif;
+position:absolute;
+margin-left: auto;
+margin-bottom:1.2vmax;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+font-size:2vmax;
+line-height:2.3vmax;
+bottom:0vmax;
 }
 </style>
 
 
 <body>
-<div id="vid">
-<video id="gustavo"> <source src="media/gustavo.mp4" type="video/mp4" preload="auto" autobuffer controls></video>
-</div>
-
 
 <audio id="d1"> <source src="media/dingg.ogg" type="audio/ogg" preload="auto" autobuffer controls></audio>
 <audio id="d2"> <source src="media/dingg.ogg" type="audio/ogg" preload="auto" autobuffer controls></audio>
 <audio id="d3"> <source src="media/dingg.ogg" type="audio/ogg" preload="auto" autobuffer controls></audio>
 
 
-<div id="texxt"><h1 class="txt" id="textt">You Are Hector Salamanca</h1>
-<h3 class="txt" id="sml">You know what to do.</h3> </div>
+<div> <h1 class="txt" id="title">You Are Hector Salamanca</h1>
+<h1 class="txt" id="subtitle">You know what to do.</h1> </div>
 
 
+
+<div class="vid">
+<video id="gustavo"> <source src="media/gustavo.mp4" type="video/mp4" preload="auto" autobuffer controls></video>
+</div>
 <div id=btn></div>
 
 
-<div id="fuck">
-<h5 class="txt" id="bottom">Made by @sircrossleg on Twitter. Characters and videos from Breaking Bad, owned by Sony Pictures Television Inc.</h5></div>
+<div>
+<h5 id="footer" class="txt">Made by @sircrossleg on Twitter. Characters and videos from Breaking Bad,
+owned by Sony Pictures Television Inc.</h5></div>
+
+
 <img id="im" src="media/bell.png">
 
 
@@ -163,14 +183,17 @@ cont.play();
 /*
 document.getElementById("textt").classlist.toggle("fade");
 document.getElementById("im").classlist.toggle("fade");*/
+fadeOut(document.getElementById("title"),100);
+fadeOut(document.getElementById("subtitle"),100);
+fadeOut(document.getElementById("footer"),100);
 fadeOut(document.getElementById("im"),100);
-fadeOut(document.getElementById("texxt"),100);
-fadeOut(document.getElementById("fuck"),100);
 setTimeout(function(){
 var element;
-element = document.getElementById("texxt");
+element = document.getElementById("subtitle");
 element.parentNode.removeChild(element);
-element = document.getElementById("fuck");
+element = document.getElementById("title");
+element.parentNode.removeChild(element);
+element = document.getElementById("footer");
 element.parentNode.removeChild(element);
 element = document.getElementById("im");
 element.parentNode.removeChild(element);
