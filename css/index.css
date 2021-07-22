@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+body
+{
+	background-color: #322d31;
+}
+h1
+{
+	font-size:4vmax;
+	color: white;
+	font-family: 'Dela Gothic One', cursive;
+	display:inline-block;
+}
+
+p
+{
+	font-size:1.2vmax;
+	font-family: 'Space Grotesk', sans-serif;
+	color: white;
+	text-align: center;
+}
+a
+{
+	text-align: center;
+	color: grey;
+}
+
+
+.tit
+{
+	text-align:center;
+  margin: auto;
+  width: 100%;
+}
+.tit img
+{
+	filter: brightness(0) invert(1);
+	width: 4.2vmax;
+vertical-align: text-bottom;
+display:inline-block;
+padding-right:1.4vmax;
+
+}
+.main
+{
+
+  position: absolute;
+  width:100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
