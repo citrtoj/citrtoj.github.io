@@ -181,7 +181,7 @@ text-overflow: ellipsis;
 {
 	margin-bottom:-.03em;
 }
-@media only screen and (min-width:1900px)
+@media only screen and (min-width:1500px)
 {
 	html{
 		font-size:1.4em;
@@ -192,6 +192,13 @@ text-overflow: ellipsis;
 	html{
 		font-size:.8em;
 	}
+}
+@media only screen and (min-height:1300px)
+{
+	html{
+		font-size:1.4em;
+	}
+	
 }
 @media only screen and (max-height:400px)
 {
