@@ -65,7 +65,7 @@ body
 	margin-top:-0.85em;
 }
 input,button
-{
+{display:inline-block;
 	filter: drop-shadow(0px 0px .08em rgba(0,0,0,.5));
 	appearance:none;
 	font-size:.8em;
