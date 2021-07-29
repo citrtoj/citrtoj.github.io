@@ -18,11 +18,10 @@ function submitt(){
 	document.getElementById("yesno").innerHTML="";
 	document.getElementById("expl").innerHTML="Loading..."
 	document.getElementById("tryagain").innerHTML="";
-	document.getElementById("fortytwo").innerHTML="";
 	
 	document.getElementById("results").classList.add("gone");
 	var revvalue=document.getElementById("searchUser").value;
-	fetch(`https://photon.komoot.io/api/?limit=5&q=${revvalue}&osm_tag=place:city&osm_tag=place:town&osm_tag=place:borough&osm_tag=place:village&osm_tag=place:hamlet&osm_tag=place:island&osm_tag=place:islet`).then(function(response3){
+	fetch(`https://photon.komoot.io/api/?limit=5&q=${revvalue}&osm_tag=place:city&osm_tag=place:town&osm_tag=place:borough&osm_tag=place:village&osm_tag=place:island&osm_tag=place:islet`).then(function(response3){
 		if(response3.ok){
 			return response3.json();
 		}else{
@@ -76,7 +75,7 @@ document.getElementById("searchUser").addEventListener("keyup",function()
 	else{
 	document.getElementById("results").classList.remove("gone");
 	var post;
-	fetch(`https://photon.komoot.io/api/?limit=5&q=${input}&osm_tag=place:city&osm_tag=place:town&osm_tag=place:borough&osm_tag=place:village&osm_tag=place:hamlet&osm_tag=place:island&osm_tag=place:islet`).then(function(response){
+	fetch(`https://photon.komoot.io/api/?limit=5&q=${input}&osm_tag=place:city&osm_tag=place:town&osm_tag=place:borough&osm_tag=place:village&osm_tag=place:island&osm_tag=place:islet`).then(function(response){
 		if(response.ok) {
 			return response.json();
 		} else {
@@ -103,7 +102,6 @@ document.getElementById("searchUser").addEventListener("keyup",function()
 				document.getElementById("expl").innerHTML="Loading..."
 				document.getElementById("yesno").innerHTML="";
 				document.getElementById("tryagain").innerHTML="";
-				document.getElementById("fortytwo").innerHTML="";
 				searchbox.value=licontent;
 				var lat=dat.geometry.coordinates[1];
 				var lon=dat.geometry.coordinates[0];
