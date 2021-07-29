@@ -174,8 +174,12 @@ text-overflow: ellipsis;
 {
 	margin-top:-.05em;
 }
-#yesno, .black{
+.black{
 	color:black;
+}
+.green
+{
+	color:green;
 }
 #tryagain
 {
