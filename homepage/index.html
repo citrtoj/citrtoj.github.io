@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bb35ed9973.js" crossorigin="anonymous"></script>
+    <script src="bookmarks.js"></script>
+    <script src="clock.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="clock-wrapper flex">
+            <div class="clock" id="hour">N/A</div>
+            <div class="clock" id="min">
+            N/A</div>
+            <div class="clock" id="sec">
+                N/A
+            </div>
+        </div>
+        <div class="flex vh10">
+            <span id="date"></span>
+            <span id="time">
+                <h1>N/A</h1>
+            </span>
+        </div>
+        <div class="flex vh10 wrap" id="bookmarks"> 
+        </div>
+    </div>
+    <div class="z5 flex hidden popup-bg-1">
+        <div class="popup">
+            <form class="form" id="form1">
+                <div class="desc">
+                    <p>Add a new bookmark...</p>
+                    <i class="fas fa-times"></i>
+                </div><input class="input" type="text" name="desc" id="name" placeholder="Name">
+                <br>
+                <input class="input" type="text" name="URL" id="url" placeholder="URL">
+                <br>
+                
+                <button class="btn" name="create" type=submit>Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="z5 flex hidden edit popup-bg-2">
+        <div class="popup">
+            <form class="form" id="form2">
+                <div class="desc">
+                    <p>Edit bookmark...</p>
+                    <i class="fas fa-times"></i>
+                </div><input class="input" type="text" name="desc" id="name" placeholder="Name">
+                <br>
+                <input class="input" type="text" name="URL" id="url" placeholder="URL">
+                <br>
+                <button class="btn" type="submit" name="edit">Edit</button>
+                <button class="btn" type="button" name="delete">Delete</button>
+                </div>
+            </form>
+        </div>
+        
+        <i class="fas fa-adjust" title="Toggle light/dark theme"id="theme-toggle" ></i>
+    </div>
+</body>
+</html>
